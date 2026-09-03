@@ -21,6 +21,7 @@ body {
   background: var(--ivory);
   color: var(--charcoal);
   font: 16px/1.65 var(--sans);
+  padding-bottom: 64px;
 }
 img {
   display: block;
@@ -110,7 +111,7 @@ textarea {
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.01em;
   cursor: pointer;
@@ -126,7 +127,7 @@ textarea {
 .button-small {
   min-height: 42px;
   padding: 10px 14px;
-  font-size: 12px;
+  font-size: 14px;
 }
 .menu-toggle {
   width: 48px;
@@ -140,9 +141,9 @@ textarea {
   cursor: pointer;
 }
 .menu-toggle span:not(.sr-only) {
-  height: 1px;
-  background: var(--green);
-  width: 24px;
+  height: 2px;
+  background: var(--charcoal);
+  width: 25px;
   display: block;
 }
 .sr-only {
@@ -192,7 +193,7 @@ textarea {
 .eyebrow {
   margin: 0 0 13px;
   color: var(--green);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   font-weight: 700;
   text-transform: uppercase;
@@ -228,7 +229,7 @@ h3 {
 .text-link,
 .arrow-link {
   color: var(--green);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   text-underline-offset: 4px;
 }
@@ -249,16 +250,6 @@ h3 {
   height: 100%;
   object-fit: cover;
 }
-.hero-image p {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: 0;
-  background: rgba(250, 247, 242, 0.92);
-  font-size: 9px;
-  padding: 7px 10px;
-  color: var(--body);
-}
 .trust {
   background: var(--green);
   color: #fff;
@@ -270,7 +261,7 @@ h3 {
 }
 .trust p {
   margin: 0;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.4;
   display: flex;
   gap: 11px;
@@ -279,11 +270,6 @@ h3 {
 .trust p span {
   font: 400 22px/1 var(--serif);
   font-style: italic;
-}
-.trust small {
-  font-size: 9px;
-  color: rgba(255, 255, 255, 0.8);
-  margin-top: 4px;
 }
 .section {
   padding: 73px 0;
@@ -310,17 +296,21 @@ h3 {
 }
 .product-grid {
   display: grid;
-  gap: 15px;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.feature-card.sheer {
+  grid-column: 1 / -1;
 }
 .feature-card {
   border: 1px solid var(--border);
   background: var(--white);
-  min-height: 410px;
+  min-height: 390px;
   display: flex;
   flex-direction: column;
 }
 .card-image {
-  height: 198px;
+  height: 158px;
   background: var(--taupe);
   overflow: hidden;
 }
@@ -330,14 +320,14 @@ h3 {
   object-fit: cover;
 }
 .card-body {
-  padding: 20px;
+  padding: 18px;
   display: flex;
   flex: 1;
   flex-direction: column;
   align-items: flex-start;
 }
 .card-number {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--green);
@@ -345,12 +335,12 @@ h3 {
   margin: 0 0 11px;
 }
 .card-body h3 {
-  font-size: 28px;
+  font-size: 25px;
   line-height: 1.05;
   letter-spacing: -0.03em;
 }
 .card-body > p:not(.card-number) {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--body);
   line-height: 1.55;
   margin: 13px 0 22px;
@@ -363,13 +353,15 @@ h3 {
 }
 .motor {
   background: var(--warm);
-  min-height: 300px;
 }
-.motor .card-body {
-  padding-bottom: 7px;
+.feature-card.sheer .card-image {
+  height: 235px;
 }
-.motor-image img {
-  object-position: center;
+.feature-card.sheer {
+  min-height: 440px;
+}
+.feature-card:not(.sheer) .card-body {
+  padding: 16px;
 }
 .story {
   background: var(--warm);
@@ -409,7 +401,7 @@ h3 {
   letter-spacing: -0.02em;
 }
 .steps p {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--body);
   line-height: 1.5;
   margin: 6px 0 0;
@@ -418,56 +410,18 @@ h3 {
   padding-bottom: 67px;
 }
 .gallery {
-  display: grid;
-  gap: 14px;
+  display: block;
 }
 .gallery-main {
   margin: 0;
 }
 .gallery-main img {
   width: 100%;
-  aspect-ratio: 1/0.82;
+  aspect-ratio: 1 / 0.72;
   object-fit: cover;
 }
-.gallery figcaption {
-  padding: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--body);
-}
-.gallery-side {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-.work-placeholder {
-  height: 154px;
-  padding: 14px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.work-placeholder span {
-  font: 400 20px/1 var(--serif);
-  color: var(--green);
-  font-style: italic;
-}
-.work-placeholder p {
-  font: 400 20px/1.08 var(--serif);
-  margin: 0;
-}
-.one {
-  background: var(--taupe);
-}
-.two {
-  background: var(--border);
-}
 .content-note {
-  font-size: 10px;
+  font-size: 14px;
   color: var(--body);
   line-height: 1.45;
 }
@@ -496,7 +450,7 @@ h3 {
   line-height: 1.15;
 }
 .review-name {
-  font-size: 12px;
+  font-size: 14px;
   margin: 0 0 3px;
 }
 .review .content-note {
@@ -527,7 +481,7 @@ h3 {
   border-bottom: 1px solid var(--border);
   display: grid;
   grid-template-columns: 108px 1fr;
-  font-size: 12px;
+  font-size: 14px;
 }
 .showroom dt {
   color: var(--green);
@@ -567,7 +521,7 @@ h3 {
 }
 .call-detail span,
 .call-detail small {
-  font-size: 10px;
+  font-size: 14px;
   color: var(--body);
   font-weight: 500;
 }
@@ -585,12 +539,12 @@ form {
 }
 .field label,
 fieldset legend {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--green);
 }
 b {
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--body);
   margin-left: 4px;
@@ -634,13 +588,13 @@ fieldset {
 }
 .choice-grid span {
   border: 1px solid var(--border);
-  min-height: 45px;
+  min-height: 48px;
   padding: 10px 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 11px;
+  font-size: 14px;
   background: rgba(255, 255, 255, 0.4);
   cursor: pointer;
 }
@@ -656,7 +610,7 @@ fieldset {
 .form-error {
   color: #8d1f1f;
   margin: 0;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
 }
 .form-submit {
@@ -664,7 +618,7 @@ fieldset {
   margin-top: 2px;
 }
 .privacy {
-  font-size: 10px;
+  font-size: 14px;
   color: var(--body);
   margin: 0;
 }
@@ -709,7 +663,7 @@ fieldset {
   flex-basis: 45px;
 }
 .site-footer p {
-  font-size: 13px;
+  font-size: 15px;
   margin: 0;
 }
 .site-footer .content-note {
@@ -721,12 +675,17 @@ fieldset {
   gap: 8px;
 }
 .site-footer nav a {
-  font-size: 13px;
+  font-size: 15px;
   color: #fff;
 }
 .footer-phone {
   font: 400 26px/1 var(--serif);
   text-decoration: none;
+}
+.footer-email {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
 }
 .footer-bottom {
   border-top: 1px solid var(--body);
@@ -735,7 +694,7 @@ fieldset {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
-  font-size: 10px;
+  font-size: 13px;
   color: var(--taupe);
 }
 .footer-bottom a:last-child {
@@ -758,7 +717,7 @@ fieldset {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   gap: 8px;
 }
@@ -779,6 +738,9 @@ button:focus-visible {
   outline-offset: 3px;
 }
 @media (min-width: 720px) {
+  body {
+    padding-bottom: 0;
+  }
   .wrap {
     width: min(1280px, calc(100% - 64px));
   }
@@ -814,6 +776,9 @@ button:focus-visible {
   .product-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .feature-card.sheer {
+    grid-column: auto;
+  }
   .motor {
     grid-column: 1/-1;
     display: grid;
@@ -835,18 +800,8 @@ button:focus-visible {
     letter-spacing: 0.15em;
     color: var(--green);
   }
-  .gallery {
-    grid-template-columns: 1.4fr 0.6fr;
-  }
   .gallery-main img {
-    aspect-ratio: 1/0.9;
-  }
-  .gallery-side {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-  .work-placeholder {
-    height: auto;
+    aspect-ratio: 1 / 0.58;
   }
   .review-grid {
     grid-template-columns: 0.7fr 1.6fr 0.7fr;
@@ -939,6 +894,9 @@ button:focus-visible {
   .card-image {
     height: 260px;
   }
+  .feature-card.sheer .card-image {
+    height: 260px;
+  }
   .card-body {
     padding: 25px;
   }
@@ -949,7 +907,7 @@ button:focus-visible {
     padding: 22px 0;
   }
   .gallery-main img {
-    aspect-ratio: 1/0.72;
+    aspect-ratio: 1 / 0.5;
   }
   .review {
     padding: 90px 0;
