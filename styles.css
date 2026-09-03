@@ -409,15 +409,53 @@ h3 {
   padding-bottom: 67px;
 }
 .gallery {
-  display: block;
+  display: grid;
+  gap: 14px;
 }
 .gallery-main {
   margin: 0;
 }
 .gallery-main img {
   width: 100%;
-  aspect-ratio: 1 / 0.72;
+  aspect-ratio: 1 / 0.82;
   object-fit: cover;
+}
+.gallery figcaption {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--body);
+}
+.gallery-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.work-placeholder {
+  height: 154px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.work-placeholder span {
+  font: 400 20px/1 var(--serif);
+  color: var(--green);
+  font-style: italic;
+}
+.work-placeholder p {
+  font: 400 20px/1.08 var(--serif);
+  margin: 0;
+}
+.one {
+  background: var(--taupe);
+}
+.two {
+  background: var(--border);
 }
 .content-note {
   font-size: 14px;
@@ -461,7 +499,7 @@ h3 {
 }
 .showroom-image img {
   width: 100%;
-  aspect-ratio: 1/0.75;
+  aspect-ratio: 1 / 0.75;
   object-fit: cover;
 }
 .showroom-copy > p:not(.eyebrow) {
@@ -799,8 +837,18 @@ button:focus-visible {
     letter-spacing: 0.15em;
     color: var(--green);
   }
+  .gallery {
+    grid-template-columns: 1.4fr 0.6fr;
+  }
   .gallery-main img {
-    aspect-ratio: 1 / 0.58;
+    aspect-ratio: 1 / 0.9;
+  }
+  .gallery-side {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .work-placeholder {
+    height: auto;
   }
   .review-grid {
     grid-template-columns: 0.7fr 1.6fr 0.7fr;
@@ -876,26 +924,6 @@ button:focus-visible {
   .quote h2 {
     font-size: 55px;
   }
-  .product-grid {
-    grid-template-columns: 1.05fr 1.05fr 0.9fr;
-  }
-  .motor {
-    grid-column: auto;
-    display: flex;
-    min-height: 410px;
-  }
-  .motor-image {
-    height: 120px;
-  }
-  .feature-card {
-    min-height: 500px;
-  }
-  .card-image {
-    height: 260px;
-  }
-  .feature-card.sheer .card-image {
-    height: 260px;
-  }
   .card-body {
     padding: 25px;
   }
@@ -904,9 +932,6 @@ button:focus-visible {
   }
   .steps li {
     padding: 22px 0;
-  }
-  .gallery-main img {
-    aspect-ratio: 1 / 0.5;
   }
   .review {
     padding: 90px 0;
