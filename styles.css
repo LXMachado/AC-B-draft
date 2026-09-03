@@ -417,8 +417,7 @@ h3 {
 }
 .gallery-main img {
   width: 100%;
-  aspect-ratio: 1 / 0.82;
-  object-fit: cover;
+  height: auto;
 }
 .gallery figcaption {
   padding: 10px 0;
@@ -499,8 +498,7 @@ h3 {
 }
 .showroom-image img {
   width: 100%;
-  aspect-ratio: 1 / 0.75;
-  object-fit: cover;
+  height: auto;
 }
 .showroom-copy > p:not(.eyebrow) {
   color: var(--body);
@@ -839,9 +837,6 @@ button:focus-visible {
   }
   .gallery {
     grid-template-columns: 1.4fr 0.6fr;
-  }
-  .gallery-main img {
-    aspect-ratio: 1 / 0.9;
   }
   .gallery-side {
     grid-template-columns: 1fr;
