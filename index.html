@@ -8,12 +8,6 @@
       content="A Curtains & Blinds — window furnishings for Gold Coast homes."
     />
     <title>A Curtains &amp; Blinds | Gold Coast window furnishings</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -21,10 +15,12 @@
     <header class="site-header">
       <div class="wrap header-inner">
         <a class="brand" href="#top" aria-label="A Curtains and Blinds home">
-          <span class="brand-a"><img src="assets/a-mark.webp" alt="" /></span>
+          <span class="brand-a"><img src="assets/optimized/a-mark.jpg" width="128" height="128" alt="" /></span>
           <img
             class="brand-logo"
-            src="assets/logo-green.webp"
+            src="assets/optimized/logo-green.png"
+            width="320"
+            height="109"
             alt="A Curtains &amp; Blinds — Complete Window Furnishings"
           />
         </a>
@@ -88,9 +84,14 @@
         </div>
         <div class="hero-image">
           <img
-            src="assets/kirahouse.webp"
+            src="assets/optimized/hero/kirahouse-900.jpg"
+            srcset="assets/optimized/hero/kirahouse-900.jpg 900w, assets/optimized/hero/kirahouse-1440.jpg 1440w"
+            sizes="(min-width: 720px) 50vw, 100vw"
+            width="1440"
+            height="959"
             alt="Sunlit contemporary living room with soft window furnishings"
             fetchpriority="high"
+            decoding="async"
           />
         </div>
       </section>
@@ -120,8 +121,11 @@
               <div class="card-image">
                 <img
                   src="assets/gallery/curtains.webp"
+                  width="1086"
+                  height="1448"
                   alt="Layered sheer and blockout curtains in a warm bedroom"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="card-body">
@@ -140,8 +144,11 @@
               <div class="card-image">
                 <img
                   src="assets/gallery/blinds-romans.webp"
+                  width="1086"
+                  height="1448"
                   alt="Roman and roller blinds in a softly lit living room"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="card-body">
@@ -160,8 +167,11 @@
               <div class="card-image motor-image">
                 <img
                   src="assets/gallery/motorisation.webp"
+                  width="1672"
+                  height="941"
                   alt="Motorised window furnishings in a modern interior"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="card-body">
@@ -257,8 +267,11 @@
             <figure class="gallery-main">
               <img
                 src="assets/gallery/Selected-work.webp"
+                width="1536"
+                height="1024"
                 alt="Living room finished with sheer curtains and blockout drapery"
                 loading="lazy"
+                decoding="async"
               />
               <figcaption>
                 <span>Selected work</span
@@ -289,8 +302,11 @@
           <div class="showroom-image">
             <img
               src="assets/gallery/showroom.webp"
+              width="1448"
+              height="1086"
               alt="A Curtains and Blinds showroom with fabric and blind displays"
               loading="lazy"
+              decoding="async"
             />
           </div>
           <div class="showroom-copy">
@@ -443,10 +459,12 @@
     <footer id="footer" class="site-footer">
       <div class="wrap footer-grid">
         <a class="brand footer-brand" href="#top">
-          <span class="brand-a"><img src="assets/a-mark.webp" alt="" /></span>
+          <span class="brand-a"><img src="assets/optimized/a-mark.jpg" width="128" height="128" alt="" /></span>
           <img
             class="brand-logo"
-            src="assets/logo-white.webp"
+            src="assets/optimized/logo-white.png"
+            width="320"
+            height="106"
             alt="A Curtains &amp; Blinds — Complete Window Furnishings"
           />
         </a>
@@ -475,6 +493,6 @@
       <a href="tel:+61755762859"><span>☎</span> Call</a
       ><a href="#quote">Free Measure &amp; Quote <span>→</span></a>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
