@@ -481,17 +481,14 @@ h3 {
   margin: 15px 0 0;
 }
 .review {
-  background: var(--green);
-  color: #fff;
-  padding: 59px 0;
-}
-.review .eyebrow {
-  color: #fff;
+  background: var(--ivory);
+  color: var(--charcoal);
 }
 .review-heading {
   display: grid;
   gap: 18px;
-  margin-bottom: 31px;
+  max-width: 650px;
+  margin-bottom: 27px;
 }
 .review h2 {
   font: 400 39px/1.03 var(--serif);
@@ -500,10 +497,13 @@ h3 {
 .google-reviews-link,
 .review-slide a {
   width: fit-content;
-  color: #fff;
+  color: var(--green);
   font-size: 14px;
   font-weight: 700;
   text-underline-offset: 4px;
+}
+.review-slider {
+  max-width: 650px;
 }
 .review-viewport {
   overflow: hidden;
@@ -515,39 +515,43 @@ h3 {
 .review-slide {
   min-width: 100%;
   display: flex;
-  min-height: 280px;
+  min-height: 292px;
   flex-direction: column;
   align-items: flex-start;
-  padding: 25px;
-  border: 1px solid rgb(255 255 255 / 35%);
+  padding: 27px 25px;
+  background: var(--warm);
+  border-radius: 7px;
 }
 .review-stars {
   display: flex;
   gap: 10px;
   align-items: center;
-  margin-bottom: 36px;
+  margin-bottom: 25px;
+  color: var(--body);
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 .review-stars span:first-child {
-  color: #f9c840;
+  color: #76994b;
   letter-spacing: 0.14em;
   font-size: 17px;
 }
 .review blockquote {
-  font: 400 31px/1.1 var(--serif);
+  max-width: 550px;
+  font: italic 400 26px/1.38 var(--serif);
   margin: 0;
   letter-spacing: -0.03em;
 }
 .review-name {
+  color: var(--body);
   font-size: 14px;
-  margin: 20px 0 25px;
+  margin: 17px 0 21px;
 }
 .review-prompt {
-  max-width: 510px;
-  margin: 0 0 30px;
-  font: 400 31px/1.1 var(--serif);
+  max-width: 500px;
+  margin: 0 0 25px;
+  font: italic 400 26px/1.38 var(--serif);
   letter-spacing: -0.03em;
 }
 .review-slide a {
@@ -556,14 +560,14 @@ h3 {
 .review-controls {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 19px;
+  gap: 15px;
+  margin-top: 16px;
 }
 .review-control,
 .review-dots button {
-  border: 1px solid rgb(255 255 255 / 55%);
+  border: 1px solid var(--border);
   background: transparent;
-  color: #fff;
+  color: var(--green);
   cursor: pointer;
 }
 .review-control {
@@ -582,10 +586,7 @@ h3 {
   border-radius: 50%;
 }
 .review-dots button[aria-selected="true"] {
-  background: #fff;
-}
-.review .content-note {
-  color: rgba(255, 255, 255, 0.75);
+  background: var(--green);
 }
 .showroom-grid {
   display: grid;
@@ -945,8 +946,8 @@ button:focus-visible {
     align-items: end;
   }
   .review-slide {
-    min-height: 320px;
-    padding: 40px;
+    min-height: 330px;
+    padding: 34px 30px;
   }
   .showroom-grid {
     grid-template-columns: 1fr 1fr;
@@ -1035,8 +1036,7 @@ button:focus-visible {
   }
   .review blockquote,
   .review-prompt {
-    max-width: 910px;
-    font-size: 48px;
+    font-size: 30px;
   }
   .quote {
     padding-bottom: 118px;
