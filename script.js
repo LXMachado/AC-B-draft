@@ -16,31 +16,78 @@ menuLinks.forEach((link) =>
   }),
 );
 
-const form = document.querySelector("#quote-form");
-const success = document.querySelector("#form-success");
-const error = document.querySelector("#form-error");
-const reset = document.querySelector(".reset-form");
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const interests = form.querySelectorAll(
-    'input[name="interest"]:checked',
-  ).length;
-  if (!form.checkValidity() || !interests) {
-    error.hidden = false;
-    form.reportValidity();
-    return;
+const quoteDialog = document.querySelector("#quote-dialog");
+const quoteForm = document.querySelector("#quote-form");
+const quoteSuccess = document.querySelector("#form-success");
+const quoteClose = document.querySelector(".quote-close");
+const quoteSteps = [...document.querySelectorAll(".quote-step")];
+const quoteNext = document.querySelector(".step-next");
+const quoteBack = document.querySelector(".step-back");
+let activeStep = 1;
+let quoteOpener = null;
+
+const showQuoteStep = (step) => {
+  activeStep = step;
+  quoteSteps.forEach((section) => {
+    const active = Number(section.dataset.step) === step;
+    section.hidden = !active;
+    section.classList.toggle("is-active", active);
+  });
+  quoteBack.hidden = step === 1;
+  quoteNext.textContent = step === 5 ? "Request My Quote" : "Continue";
+  quoteNext.type = step === 5 ? "submit" : "button";
+  document.querySelector("#quote-title, .quote-step.is-active h2")?.focus?.();
+};
+
+const openQuote = (opener) => {
+  quoteOpener = opener;
+  if (!quoteSuccess.hidden) {
+    quoteSuccess.hidden = true;
+    quoteForm.hidden = false;
+    quoteForm.reset();
   }
-  error.hidden = true;
-  form.hidden = true;
-  success.hidden = false;
-  success.focus();
+  quoteDialog.hidden = false;
+  document.body.classList.add("quote-open");
+  showQuoteStep(1);
+  window.setTimeout(() => document.querySelector("#first-name").focus(), 0);
+};
+
+const closeQuote = () => {
+  quoteDialog.hidden = true;
+  document.body.classList.remove("quote-open");
+  quoteOpener?.focus();
+};
+
+document.querySelectorAll("[data-open-quote]").forEach((link) =>
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    openQuote(link);
+  }),
+);
+quoteClose.addEventListener("click", closeQuote);
+quoteDialog.addEventListener("click", (event) => {
+  if (event.target === quoteDialog) closeQuote();
 });
-form.addEventListener("input", () => (error.hidden = true));
-reset.addEventListener("click", () => {
-  success.hidden = true;
-  form.hidden = false;
-  form.reset();
-  document.querySelector("#name").focus();
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !quoteDialog.hidden) closeQuote();
+});
+quoteNext.addEventListener("click", () => {
+  if (activeStep < 5) {
+    const step = quoteSteps[activeStep - 1];
+    const fields = [...step.querySelectorAll("input[required]")];
+    if (!fields.every((field) => field.checkValidity())) {
+      fields.find((field) => !field.checkValidity())?.reportValidity();
+      return;
+    }
+    showQuoteStep(activeStep + 1);
+  }
+});
+quoteBack.addEventListener("click", () => showQuoteStep(activeStep - 1));
+quoteForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  quoteForm.hidden = true;
+  quoteSuccess.hidden = false;
+  quoteSuccess.focus();
 });
 
 const reviewSlider = document.querySelector("[data-review-slider]");
