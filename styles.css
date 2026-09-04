@@ -488,22 +488,101 @@ h3 {
 .review .eyebrow {
   color: #fff;
 }
-.review-grid {
+.review-heading {
   display: grid;
-  gap: 20px;
+  gap: 18px;
+  margin-bottom: 31px;
+}
+.review h2 {
+  font: 400 39px/1.03 var(--serif);
+  letter-spacing: -0.035em;
+}
+.google-reviews-link,
+.review-slide a {
+  width: fit-content;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-underline-offset: 4px;
+}
+.review-viewport {
+  overflow: hidden;
+}
+.review-track {
+  display: flex;
+  transition: transform 0.45s ease;
+}
+.review-slide {
+  min-width: 100%;
+  display: flex;
+  min-height: 280px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 25px;
+  border: 1px solid rgb(255 255 255 / 35%);
+}
+.review-stars {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 36px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.review-stars span:first-child {
+  color: #f9c840;
+  letter-spacing: 0.14em;
+  font-size: 17px;
 }
 .review blockquote {
-  font: 400 34px/1.1 var(--serif);
+  font: 400 31px/1.1 var(--serif);
   margin: 0;
   letter-spacing: -0.03em;
 }
-.review blockquote span {
-  font-size: 27px;
-  line-height: 1.15;
-}
 .review-name {
   font-size: 14px;
-  margin: 0 0 3px;
+  margin: 20px 0 25px;
+}
+.review-prompt {
+  max-width: 510px;
+  margin: 0 0 30px;
+  font: 400 31px/1.1 var(--serif);
+  letter-spacing: -0.03em;
+}
+.review-slide a {
+  margin-top: auto;
+}
+.review-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 19px;
+}
+.review-control,
+.review-dots button {
+  border: 1px solid rgb(255 255 255 / 55%);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+.review-control {
+  width: 43px;
+  height: 43px;
+  font-size: 20px;
+}
+.review-dots {
+  display: flex;
+  gap: 8px;
+}
+.review-dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border-radius: 50%;
+}
+.review-dots button[aria-selected="true"] {
+  background: #fff;
 }
 .review .content-note {
   color: rgba(255, 255, 255, 0.75);
@@ -861,9 +940,13 @@ button:focus-visible {
   .work-video {
     height: auto;
   }
-  .review-grid {
-    grid-template-columns: 0.7fr 1.6fr 0.7fr;
+  .review-heading {
+    grid-template-columns: 1fr auto;
     align-items: end;
+  }
+  .review-slide {
+    min-height: 320px;
+    padding: 40px;
   }
   .showroom-grid {
     grid-template-columns: 1fr 1fr;
@@ -947,11 +1030,13 @@ button:focus-visible {
   .review {
     padding: 90px 0;
   }
-  .review blockquote {
-    font-size: 53px;
+  .review h2 {
+    font-size: 55px;
   }
-  .review blockquote span {
-    font-size: 42px;
+  .review blockquote,
+  .review-prompt {
+    max-width: 910px;
+    font-size: 48px;
   }
   .quote {
     padding-bottom: 118px;

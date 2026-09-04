@@ -42,3 +42,29 @@ reset.addEventListener("click", () => {
   form.reset();
   document.querySelector("#name").focus();
 });
+
+const reviewSlider = document.querySelector("[data-review-slider]");
+if (reviewSlider) {
+  const track = reviewSlider.querySelector(".review-track");
+  const slides = [...reviewSlider.querySelectorAll(".review-slide")];
+  const dots = [...reviewSlider.querySelectorAll("[data-review-dot]")];
+  let currentReview = 0;
+
+  const showReview = (index) => {
+    currentReview = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${currentReview * 100}%)`;
+    dots.forEach((dot, dotIndex) =>
+      dot.setAttribute("aria-selected", String(dotIndex === currentReview)),
+    );
+  };
+
+  reviewSlider
+    .querySelector("[data-review-previous]")
+    .addEventListener("click", () => showReview(currentReview - 1));
+  reviewSlider
+    .querySelector("[data-review-next]")
+    .addEventListener("click", () => showReview(currentReview + 1));
+  dots.forEach((dot, index) =>
+    dot.addEventListener("click", () => showReview(index)),
+  );
+}
